@@ -113,6 +113,13 @@ class CalculatorPresenterTest {
     }
 
     @Test
+    fun onDivideZeroByZero() {
+        calculate("0", "0", Double.NaN) {
+            presenter.onDivideClicked()
+        }
+    }
+
+    @Test
     fun onDivideByNegative() {
         calculate("2", "-1", -2.0) {
             presenter.onDivideClicked()
